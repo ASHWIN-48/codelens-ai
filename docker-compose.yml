@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  python-service:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./storage:/app/storage
+
+  node-service:
+    build: ./node-service
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - PYTHON_SERVICE_URL=http://python-service:8000
+    depends_on:
+      - python-service
