@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic-settings
+langchain
+langgraph
+langchain-groq
+faiss-cpu
+sentence-transformers
+pymongo
+httpx
+tiktoken
+GitPython   #GitPython abstraction over git repositories can clone pull checkout
